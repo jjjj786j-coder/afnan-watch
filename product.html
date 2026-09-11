@@ -114,6 +114,38 @@ main .bg-white a[href*="wa.me/923364353333?text="]{display:none!important}
   #main-header form button{right:.75rem!important}
 }
 </style>
+<style id="style-upgrade">
+:root{--style-ink:#101828;--style-accent:#ff6b35;--style-purple:#7467f7;--style-soft:#f3f5fb}
+body{background:linear-gradient(135deg,#fbfcff 0%,#f4f6fb 48%,#eef0fa 100%)!important}
+body>div:first-of-type{background:linear-gradient(90deg,#101828,#262052)!important}
+#main-header{background:rgba(255,255,255,.78)!important;backdrop-filter:blur(18px);border-color:rgba(255,255,255,.92)!important;box-shadow:0 18px 55px rgba(16,24,40,.13)!important}
+#main-header nav a{position:relative;font-weight:700!important}
+#main-header nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-.35rem;height:2px;background:linear-gradient(90deg,var(--style-accent),var(--style-purple));transition:right .25s ease}
+#main-header nav a:hover:after{right:0}
+main>section:first-child{background:linear-gradient(118deg,#101828 0%,#242052 62%,#5b4fd1 100%)!important;position:relative}
+main>section:first-child:before{content:"";position:absolute;width:24rem;height:24rem;right:-7rem;top:-8rem;border-radius:999px;background:rgba(255,107,53,.22);filter:blur(8px);pointer-events:none}
+main>section:first-child:after{content:"";position:absolute;width:18rem;height:18rem;left:40%;bottom:-11rem;border-radius:999px;background:rgba(116,103,247,.26);filter:blur(8px);pointer-events:none}
+main>section:first-child>div{position:relative;z-index:1}
+main .bg-white{background:rgba(255,255,255,.84)!important;border:1px solid rgba(226,230,240,.9)!important;box-shadow:0 14px 36px rgba(16,24,40,.08)!important}
+main .grid>.group{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;overflow:hidden}
+main .grid>.group:hover{transform:translateY(-7px);border-color:rgba(116,103,247,.32)!important;box-shadow:0 22px 46px rgba(38,32,82,.14)!important}
+main .grid>.group .aspect-square{background:linear-gradient(145deg,#f9fafc,#eef0f8)!important}
+main .grid>.group img{mix-blend-mode:multiply}
+main .grid>.group button{background:linear-gradient(135deg,var(--style-ink),#2f286e)!important;color:#fff!important;border:0!important;border-radius:.8rem!important}
+main .grid>.group button:hover{background:linear-gradient(135deg,var(--style-accent),#ff934f)!important}
+main [class*="bg-[#B8954A]"]{background:linear-gradient(135deg,var(--style-accent),#ff934f)!important;color:#fff!important}
+main [class*="bg-[#B8954A]"]:hover{background:linear-gradient(135deg,#e95729,var(--style-accent))!important}
+main [class*="bg-[#B64235]"]{background:linear-gradient(135deg,#ef476f,#d9365e)!important}
+main .rounded-xl,main .rounded-2xl{border-radius:1.35rem!important}
+main input:focus,main select:focus,main textarea:focus{border-color:var(--style-purple)!important;box-shadow:0 0 0 4px rgba(116,103,247,.12)!important}
+footer{background:linear-gradient(135deg,#101828,#242052)!important}
+@media(max-width:640px){
+  main>section:first-child{margin-top:.85rem!important}
+  main .grid>.group:hover{transform:translateY(-3px)}
+  main>section:first-child:before{width:14rem;height:14rem;right:-6rem;top:-4rem}
+}
+@media(prefers-reduced-motion:reduce){main .grid>.group:hover{transform:none}}
+</style>
 </head>
 <body class="bg-[#F7F4EF] text-[#171717] antialiased">
 <!-- TOP BAR -->
