@@ -89,6 +89,23 @@ main .bg-white a[href*="wa.me/923364353333?text="]{display:none!important}
   main h1{font-size:2rem!important;line-height:1.05!important}
   main .flex-wrap{gap:.65rem!important}
 }
+<style id="navbar-mobile-fix">
+@media(max-width:640px){
+  body>div:first-of-type .flex.items-center.gap-5{display:none!important}
+  #main-header>div{display:grid!important;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.5rem!important}
+  #main-header>div>a:first-child{min-width:0;gap:.55rem!important}
+  #main-header>div>a:first-child>div:last-child{min-width:0;overflow:hidden}
+  #main-header>div>a:first-child span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #main-header>div>a:first-child span:first-child{font-size:.92rem!important}
+  #main-header>div>a:first-child span:last-child{font-size:.44rem!important}
+  #main-header>div>div:last-child{display:flex!important;align-items:center;gap:.15rem!important}
+  #main-header>div>div:last-child>a[aria-label="WhatsApp Support"]{display:none!important}
+  #main-header>div>div:last-child>a,#main-header>div>div:last-child>button{width:2.35rem;height:2.35rem;display:flex;align-items:center;justify-content:center;padding:.45rem!important}
+  #main-header form{grid-column:1/-1;grid-row:2;display:flex!important;width:100%!important}
+  #main-header form input{height:2.55rem!important;font-size:.72rem!important}
+  #main-header form button{right:.75rem!important}
+}
+</style>
 </style>
 </head>
 <body class="bg-[#F7F4EF] text-[#171717] antialiased">
