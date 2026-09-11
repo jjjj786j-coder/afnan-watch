@@ -48,6 +48,31 @@
       .fade-up { transition: none !important; opacity: 1 !important; transform: none !important; }
     }
   </style>
+<style id="modern-refresh">
+:root{--modern-ink:#111827;--modern-surface:#f6f7fb;--modern-accent:#ff6b35;--modern-violet:#6d5ef5;--modern-line:#e8eaf0}
+body{background:radial-gradient(circle at 12% 0%,#fff 0,var(--modern-surface) 38%,#eef0f7 100%)!important;color:var(--modern-ink)!important}
+body>div:nth-of-type(2){display:none!important}
+body>div:first-of-type{background:var(--modern-ink)!important;border:0!important}
+#main-header{background:rgba(255,255,255,.9)!important;border:1px solid rgba(255,255,255,.95)!important;box-shadow:0 16px 45px rgba(15,23,42,.1)!important;border-radius:1.25rem!important;max-width:calc(1400px - 2rem);margin:.75rem auto 0;top:.75rem!important}
+#main-header>div{padding:.8rem 1.1rem!important}
+#main-header .w-10.h-10{background:linear-gradient(135deg,var(--modern-ink),var(--modern-violet))!important;border:0!important;border-radius:1rem!important;box-shadow:0 8px 18px rgba(109,94,245,.28)}
+#main-header nav a{text-transform:none!important;letter-spacing:-.01em!important;color:var(--modern-ink)!important}
+#main-header nav a:hover{color:var(--modern-accent)!important}
+main .bg-white{background:rgba(255,255,255,.92)!important;border-color:var(--modern-line)!important;box-shadow:0 12px 32px rgba(15,23,42,.07)!important}
+main [class*="border-[#DED8CE]"]{border-color:var(--modern-line)!important}
+main .rounded-xl,main .rounded-2xl{border-radius:1.25rem!important}
+main>section:first-child{border-radius:2rem!important;box-shadow:0 24px 70px rgba(15,23,42,.16);margin:1.5rem 1rem 0;overflow:hidden}
+main img{transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s ease}
+main img:hover{transform:scale(1.035)}
+button[class*="bg-[#B8954A]"],a[class*="bg-[#B8954A]"]{background:linear-gradient(135deg,var(--modern-accent),#ff934f)!important;border:0!important;border-radius:.9rem!important;box-shadow:0 10px 20px rgba(255,107,53,.2)}
+button[class*="bg-[#B8954A]"]:hover,a[class*="bg-[#B8954A]"]:hover{background:linear-gradient(135deg,#e95729,var(--modern-accent))!important;transform:translateY(-2px)}
+main [class*="text-[#B8954A]"]{color:var(--modern-accent)!important}
+main input,main select,main textarea{border-color:var(--modern-line)!important;border-radius:.85rem!important}
+main h1,main h2,main h3{letter-spacing:-.04em}
+main [class*="bg-[#171717]"]{background:linear-gradient(135deg,#111827,#242050)!important}
+@media(max-width:1023px){#main-header{max-width:calc(100% - 1rem);margin-top:.5rem}main>section:first-child{margin-inline:.5rem;border-radius:1.35rem!important}}
+@media(prefers-reduced-motion:reduce){main img:hover,button[class*="bg-[#B8954A]"]:hover,a[class*="bg-[#B8954A]"]:hover{transform:none}}
+</style>
 </head>
 <body class="bg-[#F7F4EF] text-[#171717] antialiased">
 <!-- TOP BAR -->
