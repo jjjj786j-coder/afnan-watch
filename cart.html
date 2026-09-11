@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart & Checkout | Afnan Watch Pakistan</title>
+  <meta name="description" content="View your watch cart and place your order directly via Cash on Delivery or WhatsApp with Afnan Watch Pakistan.">
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#171717',
+            black: '#0D0D0D',
+            ivory: '#F7F4EF',
+            gold: {
+              DEFAULT: '#B8954A',
+              dark: '#8B6B2F',
+              soft: '#F4EFE6'
+            },
+            cream: '#EEE8DD',
+            body: '#555555',
+            muted: '#888888',
+            border: '#DED8CE',
+            white: '#FFFFFF',
+            success: '#2E8B57',
+            danger: '#B64235',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts: Inter only -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #F7F4EF; color: #171717; }
+  </style>
+</head>
+<body class="bg-[#F7F4EF] text-[#171717] antialiased min-h-screen flex flex-col justify-between">
+
+  <div>
+    <!-- TOP BAR -->
+    <div class="bg-[#0D0D0D] text-[#EEE8DD] text-xs py-2.5 px-4 border-b border-[#2A2A2A]">
+      <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div class="flex items-center gap-3 text-[11px] font-medium tracking-wide">
+          <span class="text-[#B8954A] font-semibold">AFNAN WATCH CHECKOUT</span>
+          <span class="text-gray-600">•</span>
+          <span>Nationwide Cash on Delivery</span>
+        </div>
+        <div class="flex items-center gap-5 text-[11px]">
+          <a href="contact.html" class="hover:text-[#B8954A] transition-colors">Help</a>
+          <a href="https://wa.me/923364353333" target="_blank" class="text-[#B8954A] font-semibold hover:underline">WhatsApp: +92 336 435 3333</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STICKY HEADER -->
+    <header id="main-header" class="sticky top-0 z-50 bg-[#F7F4EF]/95 backdrop-blur-md border-b border-[#DED8CE] transition-all duration-300">
+      <div class="max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-between gap-4">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 group shrink-0">
+          <div class="w-10 h-10 bg-[#171717] rounded-md flex items-center justify-center text-[#B8954A] font-serif font-black text-xl border border-[#B8954A]/30">AW</div>
+          <div class="flex flex-col">
+            <span class="text-xl sm:text-2xl font-extrabold tracking-widest text-[#0D0D0D] leading-none uppercase">AFNAN <span class="text-[#B8954A]">WATCH</span></span>
+            <span class="text-[9px] text-[#888888] font-semibold tracking-widest uppercase mt-0.5">Luxury Timepieces Pakistan</span>
+          </div>
+        </a>
+
+        <!-- Header Title -->
+        <div class="text-xs font-bold text-[#171717] uppercase tracking-wider hidden sm:block">
+          Your Watch Selection
+        </div>
+
+        <!-- Support CTA -->
+        <div class="flex items-center gap-4 shrink-0">
+          <a href="https://wa.me/923364353333" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-xs font-bold text-[#2E8B57] bg-green-50 border border-green-200 px-3 py-1.5 rounded-lg">
+            <span>WhatsApp Support</span>
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- MAIN CART CONTENT -->
+    <main class="max-w-[1400px] mx-auto px-4 py-10">
+      
+      <!-- PAGE HEADER -->
+      <div class="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#DED8CE] pb-4">
+        <div>
+          <h1 class="text-2xl font-black text-[#0D0D0D] tracking-tight">Your Shopping Cart</h1>
+          <p class="text-xs text-[#555555]">Review selected watches before completing your Cash on Delivery checkout</p>
+        </div>
+        <a href="categories.html" class="inline-flex items-center gap-1 text-xs font-bold text-[#B8954A] hover:underline uppercase tracking-wider">
+          &larr; Continue Shopping
+        </a>
+      </div>
+
+      <!-- MAIN CART GRID -->
+      <div id="cart-container" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- LEFT: ITEMS LIST (8 Cols) -->
+        <div class="lg:col-span-8 space-y-4">
+          <div class="bg-white rounded-2xl border border-[#DED8CE] shadow-sm overflow-hidden">
+            <div class="p-4 bg-[#EEE8DD] border-b border-[#DED8CE] text-xs font-bold text-[#171717] uppercase tracking-wider flex justify-between items-center">
+              <span>Timepiece Details</span>
+              <span>Subtotal</span>
+            </div>
+            
+            <div id="cart-items-list" class="divide-y divide-[#EEE8DD]">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+
+          <!-- Trust Badges Strip -->
+          <div class="bg-white rounded-xl p-5 border border-[#DED8CE] shadow-sm grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-[#555555]">
+            <div class="flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-[#B8954A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span><strong>Cash on Delivery:</strong> Pay cash upon arrival.</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-[#2E8B57]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <span><strong>7-Day Checking:</strong> Easy item replacement.</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-[#171717]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span><strong>3–4 Days:</strong> Delivery across Pakistan.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: SUMMARY & CHECKOUT FORM (4 Cols) -->
+        <div class="lg:col-span-4 space-y-6">
+          
+          <div class="bg-white rounded-2xl border border-[#DED8CE] shadow-sm p-6 space-y-5">
+            <h3 class="font-bold text-sm text-[#0D0D0D] uppercase tracking-wider border-b border-[#DED8CE] pb-3">Order Summary</h3>
+
+            <!-- Price Breakdown -->
+            <div class="space-y-2.5 text-xs text-[#555555]">
+              <div class="flex justify-between">
+                <span>Subtotal</span>
+                <span id="summary-subtotal" class="font-bold text-[#171717]">Rs. 0</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Nationwide Shipping</span>
+                <span id="summary-shipping" class="font-bold text-[#171717]">Rs. 200</span>
+              </div>
+              <div id="coupon-row" class="hidden flex justify-between text-[#2E8B57] font-bold">
+                <span>Coupon Discount</span>
+                <span id="summary-discount">- Rs. 0</span>
+              </div>
+              <div class="border-t border-[#DED8CE] pt-3 flex justify-between text-sm font-black text-[#0D0D0D]">
+                <span>Total Amount</span>
+                <span id="summary-total" class="text-[#B8954A]">Rs. 0</span>
+              </div>
+            </div>
+
+            <!-- Coupon Code Field -->
+            <div class="pt-2 border-t border-[#EEE8DD]">
+              <label class="block text-[11px] font-bold text-[#171717] mb-1 uppercase tracking-wider">Coupon Code</label>
+              <div class="flex gap-2">
+                <input type="text" id="coupon-code" placeholder="AFNAN10 or WELCOME500" class="bg-[#F7F4EF] border border-[#DED8CE] rounded-lg px-3 py-1.5 text-xs text-[#171717] uppercase focus:outline-none focus:border-[#B8954A] w-full">
+                <button onclick="applyCoupon()" class="bg-[#171717] hover:bg-black text-[#B8954A] text-xs font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider transition-colors shrink-0">
+                  Apply
+                </button>
+              </div>
+              <div id="coupon-msg" class="hidden text-[11px] font-semibold mt-1"></div>
+            </div>
+
+            <!-- CHECKOUT FORM -->
+            <div class="pt-4 border-t border-[#DED8CE] space-y-3">
+              <h4 class="font-bold text-xs text-[#0D0D0D] uppercase tracking-wider">Delivery Details</h4>
+              
+              <div>
+                <label class="block text-[11px] font-bold text-[#171717] mb-0.5">Full Name *</label>
+                <input type="text" id="cust-name" required placeholder="Enter full name" class="w-full bg-[#F7F4EF] border border-[#DED8CE] rounded-lg px-3 py-2 text-xs text-[#171717] focus:outline-none focus:border-[#B8954A]">
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-[#171717] mb-0.5">WhatsApp / Phone Number *</label>
+                <input type="tel" id="cust-phone" required placeholder="0336XXXXXXX" class="w-full bg-[#F7F4EF] border border-[#DED8CE] rounded-lg px-3 py-2 text-xs text-[#171717] focus:outline-none focus:border-[#B8954A]">
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-[#171717] mb-0.5">City *</label>
+                <select id="cust-city" class="w-full bg-[#F7F4EF] border border-[#DED8CE] rounded-lg px-3 py-2 text-xs text-[#171717] focus:outline-none focus:border-[#B8954A]">
+                  <option value="Lahore">Lahore</option>
+                  <option value="Karachi">Karachi</option>
+                  <option value="Islamabad">Islamabad</option>
+                  <option value="Rawalpindi">Rawalpindi</option>
+                  <option value="Faisalabad">Faisalabad</option>
+                  <option value="Peshawar">Peshawar</option>
+                  <option value="Quetta">Quetta</option>
+                  <option value="Multan">Multan</option>
+                  <option value="Bannu">Bannu</option>
+                  <option value="Other">Other City across Pakistan</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-[#171717] mb-0.5">Full Delivery Address *</label>
+                <textarea id="cust-address" rows="2" required placeholder="House #, Street #, Area..." class="w-full bg-[#F7F4EF] border border-[#DED8CE] rounded-lg px-3 py-2 text-xs text-[#171717] focus:outline-none focus:border-[#B8954A]"></textarea>
+              </div>
+
+              <!-- Checkout CTAs -->
+              <button onclick="processCheckout()" class="w-full bg-[#2E8B57] hover:bg-green-700 text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-colors shadow-lg flex items-center justify-center gap-2">
+                <span>Proceed to WhatsApp Order</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+
+              <p class="text-[10px] text-[#888888] text-center">
+                Creates a readable order summary and opens WhatsApp (+92 336 435 3333) for instant dispatch confirmation.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- EMPTY CART STATE (ILLUSTRATION & BTN) -->
+      <div id="empty-cart-view" class="hidden text-center py-20 bg-white rounded-2xl border border-[#DED8CE] max-w-xl mx-auto my-8 p-8 shadow-sm">
+        <div class="w-20 h-20 bg-[#F4EFE6] rounded-full flex items-center justify-center text-[#B8954A] mx-auto mb-4 border border-[#DED8CE]">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h2 class="text-2xl font-black text-[#0D0D0D]">Your watch collection starts here</h2>
+        <p class="text-xs text-[#555555] max-w-sm mx-auto mt-2 mb-6">Explore our curated catalog of Japanese quartz, automatic mechanical, and Islamic prayer timepieces.</p>
+        <a href="categories.html" class="inline-block bg-[#171717] hover:bg-black text-[#B8954A] font-bold text-xs uppercase tracking-widest px-8 py-3.5 rounded-xl transition-colors border border-[#B8954A]/40 shadow-md">
+          Browse Watches
+        </a>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0D0D0D] text-gray-400 text-xs border-t border-[#2A2A2A] pt-8 pb-6 mt-12">
+    <div class="max-w-[1400px] mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <p>© 2026 Afnan Watch. Official site: <a href="https://afnanwatch.com/" target="_blank" class="text-gray-300 hover:underline">afnanwatch.com</a>. WhatsApp: +92 336 435 3333.</p>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="categories.html" class="hover:text-white">Catalog</a>
+        <a href="contact.html" class="hover:text-white">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART JAVASCRIPT -->
+  <script>
+    let appliedDiscount = 0;
+
+    const sampleProducts = [
+      {
+        id: 'C-1135',
+        name: 'Stainless Steel Men Watch C-1135',
+        price: 3990,
+        image: 'https://cdn.shopify.com/s/files/1/0669/0501/4343/files/a2fb83dc-C-1135-1.jpg?v=1774171540',
+        quantity: 1
+      },
+      {
+        id: 'RLX-T-TG',
+        name: 'Luxury Style Men’s Watch T-TG',
+        price: 3499,
+        image: 'https://cdn.shopify.com/s/files/1/0669/0501/4343/files/twz1l.jpg?v=1778231581',
+        quantity: 1
+      }
+    ];
+
+    function getCart() {
+      try {
+        let cart = JSON.parse(localStorage.getItem('afnan_cart'));
+        if (!cart || cart.length === 0) {
+          cart = [...sampleProducts];
+          localStorage.setItem('afnan_cart', JSON.stringify(cart));
+        }
+        return cart;
+      } catch (e) {
+        return [...sampleProducts];
+      }
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem('afnan_cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function renderCart() {
+      const cart = getCart();
+      const container = document.getElementById('cart-container');
+      const emptyView = document.getElementById('empty-cart-view');
+      const list = document.getElementById('cart-items-list');
+
+      if (!cart || cart.length === 0) {
+        if (container) container.classList.add('hidden');
+        if (emptyView) emptyView.classList.remove('hidden');
+        return;
+      } else {
+        if (container) container.classList.remove('hidden');
+        if (emptyView) emptyView.classList.add('hidden');
+      }
+
+      let subtotal = 0;
+
+      list.innerHTML = cart.map(item => {
+        const itemSubtotal = item.price * item.quantity;
+        subtotal += itemSubtotal;
+
+        return `
+          <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 bg-[#F7F4EF] rounded-lg overflow-hidden shrink-0 border border-[#DED8CE]">
+                <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+              </div>
+              <div class="space-y-1">
+                <h4 class="font-bold text-xs text-[#171717] line-clamp-1">${item.name}</h4>
+                <div class="text-xs text-[#B8954A] font-bold">Rs. ${item.price.toLocaleString()}</div>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center border border-[#DED8CE] rounded bg-[#F7F4EF] text-xs">
+                    <button onclick="updateItemQty('${item.id}', -1)" class="px-2.5 py-0.5 font-bold hover:bg-gray-200 text-[#171717]">-</button>
+                    <span class="px-2.5 py-0.5 font-bold text-[#171717] bg-white border-x border-[#DED8CE]">${item.quantity}</span>
+                    <button onclick="updateItemQty('${item.id}', 1)" class="px-2.5 py-0.5 font-bold hover:bg-gray-200 text-[#171717]">+</button>
+                  </div>
+                  <button onclick="removeItem('${item.id}')" class="text-[#B64235] hover:underline font-semibold text-[11px]">Remove</button>
+                </div>
+              </div>
+            </div>
+            <div class="text-right font-black text-sm text-[#0D0D0D] shrink-0">
+              Rs. ${itemSubtotal.toLocaleString()}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const shipping = subtotal >= 3000 ? 0 : 200;
+      const grandTotal = Math.max(0, subtotal + shipping - appliedDiscount);
+
+      document.getElementById('summary-subtotal').textContent = 'Rs. ' + subtotal.toLocaleString();
+      document.getElementById('summary-shipping').textContent = shipping === 0 ? 'FREE' : 'Rs. ' + shipping.toLocaleString();
+      document.getElementById('summary-total').textContent = 'Rs. ' + grandTotal.toLocaleString();
+    }
+
+    function updateItemQty(id, change) {
+      let cart = getCart();
+      const item = cart.find(i => i.id === id);
+      if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) {
+          cart = cart.filter(i => i.id !== id);
+        }
+      }
+      saveCart(cart);
+    }
+
+    function removeItem(id) {
+      let cart = getCart();
+      cart = cart.filter(i => i.id !== id);
+      saveCart(cart);
+    }
+
+    function applyCoupon() {
+      const code = (document.getElementById('coupon-code')?.value || '').trim().toUpperCase();
+      const msg = document.getElementById('coupon-msg');
+      const row = document.getElementById('coupon-row');
+
+      if (!msg) return;
+
+      const cart = getCart();
+      const subtotal = cart.reduce((t, i) => t + (i.price * i.quantity), 0);
+
+      if (code === 'AFNAN10') {
+        appliedDiscount = Math.round(subtotal * 0.10);
+        msg.textContent = `✓ 10% Discount Applied (-Rs. ${appliedDiscount.toLocaleString()})`;
+        msg.className = 'text-[11px] font-semibold mt-1 text-[#2E8B57]';
+        if (row) row.classList.remove('hidden');
+        document.getElementById('summary-discount').textContent = '- Rs. ' + appliedDiscount.toLocaleString();
+      } else if (code === 'WELCOME500') {
+        appliedDiscount = 500;
+        msg.textContent = '✓ Rs. 500 Discount Applied';
+        msg.className = 'text-[11px] font-semibold mt-1 text-[#2E8B57]';
+        if (row) row.classList.remove('hidden');
+        document.getElementById('summary-discount').textContent = '- Rs. 500';
+      } else {
+        appliedDiscount = 0;
+        msg.textContent = '❌ Invalid coupon code. Try AFNAN10 or WELCOME500';
+        msg.className = 'text-[11px] font-semibold mt-1 text-[#B64235]';
+        if (row) row.classList.add('hidden');
+      }
+
+      msg.classList.remove('hidden');
+      renderCart();
+    }
+
+    function processCheckout() {
+      const name = (document.getElementById('cust-name')?.value || '').trim();
+      const phone = (document.getElementById('cust-phone')?.value || '').trim();
+      const city = document.getElementById('cust-city')?.value || 'Lahore';
+      const address = (document.getElementById('cust-address')?.value || '').trim();
+
+      if (!name || !phone || !address) {
+        alert('Please fill in your Name, Phone Number, and Delivery Address before proceeding.');
+        return;
+      }
+
+      const cart = getCart();
+      if (cart.length === 0) {
+        alert('Your cart is empty.');
+        return;
+      }
+
+      let subtotal = 0;
+      let itemLines = cart.map(item => {
+        const itemSubtotal = item.price * item.quantity;
+        subtotal += itemSubtotal;
+        return `- ${item.name} (Qty: ${item.quantity}) = Rs. ${itemSubtotal.toLocaleString()}`;
+      }).join('\n');
+
+      const shipping = subtotal >= 3000 ? 0 : 200;
+      const total = Math.max(0, subtotal + shipping - appliedDiscount);
+
+      const messageText = `*NEW ORDER - AFNAN WATCH PAKISTAN*\n` +
+        `----------------------------------------\n` +
+        `*Customer Name:* ${name}\n` +
+        `*Phone Number:* ${phone}\n` +
+        `*City:* ${city}\n` +
+        `*Delivery Address:* ${address}\n\n` +
+        `*Items Ordered:*\n${itemLines}\n\n` +
+        `*Subtotal:* Rs. ${subtotal.toLocaleString()}\n` +
+        `*Shipping Fee:* ${shipping === 0 ? 'FREE' : 'Rs. ' + shipping.toLocaleString()}\n` +
+        `*Discount:* Rs. ${appliedDiscount.toLocaleString()}\n` +
+        `*TOTAL AMOUNT:* Rs. ${total.toLocaleString()}\n` +
+        `*Payment Method:* Cash on Delivery\n` +
+        `----------------------------------------\n` +
+        `Please confirm my order dispatch. Thank you!`;
+
+      const whatsappUrl = `https://wa.me/923364353333?text=${encodeURIComponent(messageText)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCart();
+    });
+  </script>
+
+  <!-- CHATBOT -->
+</body>
+</html>

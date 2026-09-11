@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afnan Watch | Premium Pakistani Watch Retailer</title>
+  <meta name="description" content="Explore refined men's, women's, automatic, and luxury wristwatches at Afnan Watch Pakistan. Nationwide Cash on Delivery & 7-day checking return policy.">
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#171717',
+            black: '#0D0D0D',
+            ivory: '#F7F4EF',
+            gold: {
+              DEFAULT: '#B8954A',
+              dark: '#8B6B2F',
+              soft: '#F4EFE6'
+            },
+            cream: '#EEE8DD',
+            body: '#555555',
+            muted: '#888888',
+            border: '#DED8CE',
+            white: '#FFFFFF',
+            success: '#2E8B57',
+            danger: '#B64235',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts: Inter only -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #F7F4EF; color: #171717; }
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { transition: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-[#F7F4EF] text-[#171717] antialiased">
+
+  <!-- ANNOUNCEMENT TOP BAR -->
+  <div class="bg-[#0D0D0D] text-[#EEE8DD] text-xs py-2.5 px-4 border-b border-[#2A2A2A]">
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3 text-[11px] font-medium tracking-wide">
+        <span class="text-[#B8954A] font-semibold">AFNAN WATCH PAKISTAN</span>
+        <span class="text-gray-600">•</span>
+        <span>Nationwide Cash on Delivery</span>
+        <span class="text-gray-600">•</span>
+        <span>3–4 Working Days Dispatch</span>
+      </div>
+      <div class="flex items-center gap-5 text-[11px]">
+        <a href="contact.html" class="hover:text-[#B8954A] transition-colors">Track Order</a>
+        <a href="contact.html" class="hover:text-[#B8954A] transition-colors">Customer Care</a>
+        <a href="https://wa.me/923364353333" target="_blank" rel="noopener" class="text-[#B8954A] font-semibold hover:underline">WhatsApp: +92 336 435 3333</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY NAVIGATION HEADER -->
+  <header id="main-header" class="sticky top-0 z-50 bg-[#F7F4EF]/95 backdrop-blur-md border-b border-[#DED8CE] transition-all duration-300">
+    <div class="max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group shrink-0">
+        <div class="w-10 h-10 bg-[#171717] rounded-md flex items-center justify-center text-[#B8954A] font-serif font-black text-xl border border-[#B8954A]/30 group-hover:border-[#B8954A] transition-colors">
+          AW
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl sm:text-2xl font-extrabold tracking-widest text-[#0D0D0D] leading-none uppercase">AFNAN <span class="text-[#B8954A]">WATCH</span></span>
+          <span class="text-[9px] text-[#888888] font-semibold tracking-widest uppercase mt-0.5">Luxury Timepieces Pakistan</span>
+        </div>
+      </a>
+
+      <!-- Main Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-wider text-[#171717] uppercase">
+        <a href="index.html" class="text-[#B8954A] border-b-2 border-[#B8954A] pb-1">Home</a>
+        <a href="categories.html?category=men" class="hover:text-[#B8954A] transition-colors pb-1">Men’s Watches</a>
+        <a href="categories.html?category=women" class="hover:text-[#B8954A] transition-colors pb-1">Women’s Watches</a>
+        <a href="categories.html?category=automatic" class="hover:text-[#B8954A] transition-colors pb-1">Automatic</a>
+        <a href="categories.html?category=luxury" class="hover:text-[#B8954A] transition-colors pb-1">Luxury Style</a>
+        <a href="categories.html?sale=true" class="text-[#B64235] font-bold hover:text-red-700 transition-colors pb-1">Sale Offers</a>
+      </nav>
+
+      <!-- Action Utilities -->
+      <div class="flex items-center gap-4 shrink-0">
+        
+        <!-- Search Field -->
+        <form action="categories.html" method="GET" class="hidden sm:flex items-center relative w-48 lg:w-64">
+          <input type="text" id="header-search-input" name="q" placeholder="Search timepieces..." class="w-full bg-[#FFFFFF] border border-[#DED8CE] rounded-full px-4 py-2 text-xs text-[#171717] placeholder-gray-400 focus:outline-none focus:border-[#B8954A] focus:ring-1 focus:ring-[#B8954A] transition-all duration-300">
+          <button type="submit" aria-label="Search" class="absolute right-3 text-gray-500 hover:text-[#B8954A]">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </button>
+        </form>
+
+        <!-- WhatsApp Icon CTA -->
+        <a href="https://wa.me/923364353333" target="_blank" rel="noopener" aria-label="WhatsApp Support" class="p-2 text-[#2E8B57] hover:text-green-700 transition-colors" title="Direct WhatsApp Support">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        </a>
+
+        <!-- Cart Icon -->
+        <a href="cart.html" class="relative p-2 text-[#171717] hover:text-[#B8954A] transition-colors" title="View Cart">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span id="global-cart-count" class="absolute top-0 right-0 bg-[#B8954A] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" aria-label="Open Navigation" class="lg:hidden p-2 text-[#171717] hover:text-[#B8954A]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div id="mobile-drawer" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-[#F7F4EF] w-4/5 max-w-xs h-full p-6 flex flex-col justify-between overflow-y-auto transform -translate-x-full transition-transform duration-300" id="mobile-drawer-content">
+      <div class="space-y-6">
+        <div class="flex items-center justify-between pb-4 border-b border-[#DED8CE]">
+          <span class="font-bold text-sm text-[#0D0D0D] tracking-wider uppercase">Menu</span>
+          <button id="close-drawer-btn" class="p-2 text-gray-500 hover:text-black">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="space-y-4 text-xs font-semibold tracking-wider text-[#171717] uppercase">
+          <a href="index.html" class="block text-[#B8954A]">Home</a>
+          <a href="categories.html" class="block hover:text-[#B8954A]">All Watches</a>
+          <a href="categories.html?category=men" class="block hover:text-[#B8954A]">Men’s Watches</a>
+          <a href="categories.html?category=women" class="block hover:text-[#B8954A]">Women’s Watches</a>
+          <a href="categories.html?category=automatic" class="block hover:text-[#B8954A]">Automatic Watches</a>
+          <a href="categories.html?category=luxury" class="block hover:text-[#B8954A]">Luxury Style</a>
+          <a href="categories.html?sale=true" class="block text-[#B64235]">Sale Watches</a>
+          <a href="cart.html" class="block hover:text-[#B8954A]">My Cart</a>
+          <a href="contact.html" class="block hover:text-[#B8954A]">Customer Support</a>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-[#DED8CE]">
+        <a href="https://wa.me/923364353333" target="_blank" rel="noopener" class="w-full bg-[#171717] hover:bg-black text-[#B8954A] font-bold py-3 rounded-lg flex items-center justify-center gap-2 text-xs tracking-wider uppercase border border-[#B8954A]/40">
+          <span>Order on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- EDITORIAL HERO SECTION -->
+    <section class="relative bg-[#171717] text-white py-16 md:py-28 px-4 overflow-hidden">
+      <!-- Background Watch Image Overlay -->
+      <div class="absolute inset-0 opacity-25">
+        <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/Top-Luxury-Watch-Brands-banner-_8236e3cae6.jpg" alt="Afnan Watch Luxury Chronograph Timepiece" class="w-full h-full object-cover">
+      </div>
+      
+      <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        
+        <!-- Hero Copy -->
+        <div class="lg:col-span-7 space-y-6 fade-up">
+          <div class="inline-flex items-center gap-2 border border-[#B8954A]/50 bg-[#B8954A]/10 px-3.5 py-1 rounded-full text-xs font-medium text-[#B8954A] tracking-wider uppercase">
+            <span>Verified Operating Store • Nationwide Delivery Across Pakistan</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+            Timepieces That <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#B8954A] to-amber-200">Define Your Moment</span>
+          </h1>
+
+          <p class="text-gray-300 text-sm sm:text-base max-w-xl font-normal leading-relaxed">
+            Explore carefully selected watches for everyday style, formal occasions and meaningful gifts across Pakistan. Handcrafted aesthetic, reliable movements, and 7-day checking guarantee.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="categories.html?category=men" class="bg-[#B8954A] hover:bg-[#8B6B2F] text-white font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-md transition-colors shadow-lg">
+              Shop Men’s Watches
+            </a>
+            <a href="categories.html?category=women" class="bg-transparent hover:bg-white/10 text-white border border-white/40 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-md transition-colors">
+              Explore Women’s Watches
+            </a>
+            <a href="https://wa.me/923364353333?text=Hi%20Afnan%20Watch,%20I%20want%20to%20inquire%20about%20your%20watch%20catalog." target="_blank" rel="noopener" class="bg-[#2E8B57] hover:bg-green-700 text-white font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-md transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Order on WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges Strip -->
+          <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-800 text-xs text-gray-400">
+            <div>
+              <span class="block font-bold text-white text-sm">3–4 Days</span>
+              <span>Nationwide Dispatch</span>
+            </div>
+            <div>
+              <span class="block font-bold text-white text-sm">7-Day Checking</span>
+              <span>Return Policy</span>
+            </div>
+            <div>
+              <span class="block font-bold text-white text-sm">100% COD</span>
+              <span>Cash on Delivery</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Featured Editorial Watch Hero Card -->
+        <div class="lg:col-span-5 fade-up">
+          <div class="bg-[#0D0D0D] border border-[#B8954A]/30 rounded-2xl p-6 shadow-2xl relative">
+            <span class="absolute top-6 right-6 bg-[#B64235] text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+              52% OFF
+            </span>
+            <div class="aspect-square bg-gray-900 rounded-xl overflow-hidden mb-5">
+              <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/a2fb83dc-C-1135-1.jpg?v=1774171540" alt="Afnan Watch stainless steel men’s watch C-1135" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="space-y-3 text-white">
+              <span class="text-[10px] font-bold text-[#B8954A] uppercase tracking-widest">Featured Best Seller</span>
+              <h3 class="font-bold text-xl leading-tight">Stainless Steel Men Watch C-1135</h3>
+              <div class="flex items-baseline gap-3">
+                <span class="text-2xl font-black text-[#B8954A]">Rs. 3,990</span>
+                <span class="text-xs text-gray-400 line-through">Rs. 8,300</span>
+                <span class="text-xs text-[#2E8B57] font-semibold bg-emerald-950/80 px-2.5 py-0.5 rounded border border-emerald-800">In Stock</span>
+              </div>
+              <p class="text-xs text-gray-400 leading-relaxed">Dual tone stainless steel bracelet, midnight blue dial, scratch-resistant mineral crystal.</p>
+              <div class="pt-3 flex items-center gap-3">
+                <a href="product.html" class="flex-1 bg-[#B8954A] hover:bg-[#8B6B2F] text-white text-center font-bold py-3 rounded-lg text-xs uppercase tracking-wider transition-colors">
+                  View Details
+                </a>
+                <button onclick="addToCart({id: 'C-1135', name: 'Stainless Steel Men Watch C-1135', price: 3990, image: 'https://cdn.shopify.com/s/files/1/0669/0501/4343/files/a2fb83dc-C-1135-1.jpg?v=1774171540'})" class="bg-white hover:bg-gray-100 text-[#171717] px-5 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED 6 EDITORIAL COLLECTIONS -->
+    <section class="max-w-[1400px] mx-auto px-4 py-16 fade-up">
+      <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
+        <span class="text-xs font-bold text-[#B8954A] uppercase tracking-widest">Curated Categories</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-[#0D0D0D]">Featured Watch Collections</h2>
+        <p class="text-xs text-[#555555]">Every block showcases real, high-resolution wristwatches from our active catalog.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        
+        <!-- Collection 1: Men's -->
+        <a href="categories.html?category=men" class="bg-white rounded-xl border border-[#DED8CE] p-4 text-center hover:border-[#B8954A] hover:shadow-lg transition-all group">
+          <div class="aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+            <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/a2fb83dc-C-1135-1.jpg?v=1774171540" alt="Afnan Watch Men's Collection Steel Watch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="font-bold text-xs text-[#171717] group-hover:text-[#B8954A] uppercase tracking-wider">Men’s Watches</h3>
+          <span class="text-[10px] text-[#888888] block mt-0.5">Classic & Executive</span>
+        </a>
+
+        <!-- Collection 2: Women's -->
+        <a href="categories.html?category=women" class="bg-white rounded-xl border border-[#DED8CE] p-4 text-center hover:border-[#B8954A] hover:shadow-lg transition-all group">
+          <div class="aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+            <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/4E79CC8A-3489-42D7-881C-9C317E9A5A00.jpg?v=1774887231" alt="Afnan Watch Women’s Gold Bracelet Watch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="font-bold text-xs text-[#171717] group-hover:text-[#B8954A] uppercase tracking-wider">Women’s Watches</h3>
+          <span class="text-[10px] text-[#888888] block mt-0.5">Elegant Wristwear</span>
+        </a>
+
+        <!-- Collection 3: Automatic -->
+        <a href="categories.html?category=automatic" class="bg-white rounded-xl border border-[#DED8CE] p-4 text-center hover:border-[#B8954A] hover:shadow-lg transition-all group">
+          <div class="aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+            <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/JD64I.jpg?v=1778424651" alt="Afnan Watch Automatic Skeleton Watch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="font-bold text-xs text-[#171717] group-hover:text-[#B8954A] uppercase tracking-wider">Automatic</h3>
+          <span class="text-[10px] text-[#888888] block mt-0.5">Self-Winding Mechanical</span>
+        </a>
+
+        <!-- Collection 4: Luxury -->
+        <a href="categories.html?category=luxury" class="bg-white rounded-xl border border-[#DED8CE] p-4 text-center hover:border-[#B8954A] hover:shadow-lg transition-all group">
+          <div class="aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+            <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/twz1l.jpg?v=1778231581" alt="Afnan Watch Luxury Dual Tone Gold Watch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="font-bold text-xs text-[#171717] group-hover:text-[#B8954A] uppercase tracking-wider">Luxury Style</h3>
+          <span class="text-[10px] text-[#888888] block mt-0.5">RLX & Premium Finish</span>
+        </a>
+
+        <!-- Collection 5: Couple -->
+        <a href="categories.html?category=couple" class="bg-white rounded-xl border border-[#DED8CE] p-4 text-center hover:border-[#B8954A] hover:shadow-lg transition-all group">
+          <div class="aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+            <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/ShopCoupleWatchCP2026InPakistan.png?v=1774541150" alt="Afnan Watch Matching Couple Watches Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="font-bold text-xs text-[#171717] group-hover:text-[#B8954A] uppercase tracking-wider">Couple Sets</h3>
+          <span class="text-[10px] text-[#888888] block mt-0.5">Matching Pairs</span>
+        </a>
+
+        <!-- Collection 6: Sale -->
+        <a href="categories.html?sale=true" class="bg-white rounded-xl border border-[#DED8CE] p-4 text-center hover:border-[#B64235] hover:shadow-lg transition-all group">
+          <div class="aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3 relative">
+            <span class="absolute top-2 left-2 bg-[#B64235] text-white text-[9px] font-bold px-1.5 py-0.5 rounded">SALE</span>
+            <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/C6pXv.jpg?v=1778374128" alt="Afnan Watch Discounted Sale Watch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="font-bold text-xs text-[#B64235] group-hover:text-red-700 uppercase tracking-wider">Sale Watches</h3>
+          <span class="text-[10px] text-[#888888] block mt-0.5">Up to 50% Off</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- BEST SELLERS (8 VERIFIED PRODUCTS GRID) -->
+    <section class="max-w-[1400px] mx-auto px-4 py-12 fade-up">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4 border-b border-[#DED8CE] pb-4">
+        <div>
+          <span class="text-xs font-bold text-[#B8954A] uppercase tracking-widest">Verified Catalog</span>
+          <h2 class="text-2xl font-black text-[#0D0D0D] tracking-tight">Best Selling Watches</h2>
+        </div>
+        <a href="categories.html" class="text-xs font-bold text-[#B8954A] hover:underline uppercase tracking-wider flex items-center gap-1">
+          Explore All Catalog Items &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        
+        <!-- Product 1 -->
+        <div class="bg-white rounded-xl border border-[#DED8CE] p-4 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+          <div>
+            <div class="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+              <span class="absolute top-2.5 left-2.5 bg-[#B64235] text-white text-[10px] font-extrabold px-2 py-0.5 rounded">52% OFF</span>
+              <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/a2fb83dc-C-1135-1.jpg?v=1774171540" alt="Afnan Watch stainless steel men’s watch C-1135" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <span class="text-[10px] font-bold text-[#888888] uppercase tracking-widest block mb-1">Japanese Quartz</span>
+            <h3 class="text-xs font-medium text-[#171717] line-clamp-2 hover:text-[#B8954A] transition-colors leading-snug">
+              <a href="product.html">Stainless Steel Men Watch C-1135</a>
+            </h3>
+            <div class="mt-2.5 flex items-baseline gap-2">
+              <span class="text-base font-black text-[#B8954A]">Rs. 3,990</span>
+              <span class="text-xs text-[#888888] line-through">Rs. 8,300</span>
+            </div>
+            <div class="flex items-center gap-1 my-2 text-xs text-[#B8954A]">
+              <span>★ 4.9</span>
+              <span class="text-[#888888] text-[11px]">(18 reviews)</span>
+            </div>
+            <div class="text-[11px] text-[#2E8B57] font-semibold flex items-center justify-between border-t border-[#EEE8DD] pt-2 mt-2">
+              <span>✓ In Stock</span>
+              <span class="text-[#888888] font-normal">3–4 Days Delivery</span>
+            </div>
+          </div>
+          <div class="pt-3 space-y-2">
+            <button onclick="addToCart({id: 'C-1135', name: 'Stainless Steel Men Watch C-1135', price: 3990, image: 'https://cdn.shopify.com/s/files/1/0669/0501/4343/files/a2fb83dc-C-1135-1.jpg?v=1774171540'})" class="w-full bg-[#171717] hover:bg-black text-[#B8954A] text-xs font-bold py-2.5 rounded-lg uppercase tracking-wider transition-colors border border-[#B8954A]/30">
+              Add to Cart
+            </button>
+            <a href="https://wa.me/923364353333?text=I%20want%20to%20order%20Stainless%20Steel%20Men%20Watch%20C-1135" target="_blank" rel="noopener" class="w-full border border-[#2E8B57] text-[#2E8B57] hover:bg-green-50 text-xs font-bold py-2 rounded-lg uppercase tracking-wider transition-colors flex items-center justify-center gap-1">
+              <span>Order on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="bg-white rounded-xl border border-[#DED8CE] p-4 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+          <div>
+            <div class="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+              <span class="absolute top-2.5 left-2.5 bg-[#B64235] text-white text-[10px] font-extrabold px-2 py-0.5 rounded">30% OFF</span>
+              <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/twz1l.jpg?v=1778231581" alt="Afnan Watch Luxury Style Men’s Watch T-TG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <span class="text-[10px] font-bold text-[#888888] uppercase tracking-widest block mb-1">RLX Dual Tone</span>
+            <h3 class="text-xs font-medium text-[#171717] line-clamp-2 hover:text-[#B8954A] transition-colors leading-snug">
+              <a href="product.html">Luxury Style Men’s Watch T-TG</a>
+            </h3>
+            <div class="mt-2.5 flex items-baseline gap-2">
+              <span class="text-base font-black text-[#B8954A]">Rs. 3,499</span>
+              <span class="text-xs text-[#888888] line-through">Rs. 4,999</span>
+            </div>
+            <div class="flex items-center gap-1 my-2 text-xs text-[#B8954A]">
+              <span>★ 4.8</span>
+              <span class="text-[#888888] text-[11px]">(12 reviews)</span>
+            </div>
+            <div class="text-[11px] text-[#2E8B57] font-semibold flex items-center justify-between border-t border-[#EEE8DD] pt-2 mt-2">
+              <span>✓ In Stock</span>
+              <span class="text-[#888888] font-normal">3–4 Days Delivery</span>
+            </div>
+          </div>
+          <div class="pt-3 space-y-2">
+            <button onclick="addToCart({id: 'RLX-T-TG', name: 'Luxury Style Men’s Watch T-TG', price: 3499, image: 'https://cdn.shopify.com/s/files/1/0669/0501/4343/files/twz1l.jpg?v=1778231581'})" class="w-full bg-[#171717] hover:bg-black text-[#B8954A] text-xs font-bold py-2.5 rounded-lg uppercase tracking-wider transition-colors border border-[#B8954A]/30">
+              Add to Cart
+            </button>
+            <a href="https://wa.me/923364353333?text=I%20want%20to%20order%20Luxury%20Style%20Men’s%20Watch%20T-TG" target="_blank" rel="noopener" class="w-full border border-[#2E8B57] text-[#2E8B57] hover:bg-green-50 text-xs font-bold py-2 rounded-lg uppercase tracking-wider transition-colors flex items-center justify-center gap-1">
+              <span>Order on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="bg-white rounded-xl border border-[#DED8CE] p-4 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+          <div>
+            <div class="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+              <span class="absolute top-2.5 left-2.5 bg-[#B64235] text-white text-[10px] font-extrabold px-2 py-0.5 rounded">40% OFF</span>
+              <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/JD64I.jpg?v=1778424651" alt="Afnan Watch IRADD 8083 Stainless Steel Watch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <span class="text-[10px] font-bold text-[#888888] uppercase tracking-widest block mb-1">IRADD Series</span>
+            <h3 class="text-xs font-medium text-[#171717] line-clamp-2 hover:text-[#B8954A] transition-colors leading-snug">
+              <a href="product.html">IRADD 8083 Stainless Steel Watch</a>
+            </h3>
+            <div class="mt-2.5 flex items-baseline gap-2">
+              <span class="text-base font-black text-[#B8954A]">Rs. 4,500</span>
+              <span class="text-xs text-[#888888] line-through">Rs. 7,500</span>
+            </div>
+            <div class="flex items-center gap-1 my-2 text-xs text-[#B8954A]">
+              <span>★ 4.7</span>
+              <span class="text-[#888888] text-[11px]">(9 reviews)</span>
+            </div>
+            <div class="text-[11px] text-[#2E8B57] font-semibold flex items-center justify-between border-t border-[#EEE8DD] pt-2 mt-2">
+              <span>✓ In Stock</span>
+              <span class="text-[#888888] font-normal">3–4 Days Delivery</span>
+            </div>
+          </div>
+          <div class="pt-3 space-y-2">
+            <button onclick="addToCart({id: 'IRADD-8083', name: 'IRADD 8083 Stainless Steel Watch', price: 4500, image: 'https://cdn.shopify.com/s/files/1/0669/0501/4343/files/JD64I.jpg?v=1778424651'})" class="w-full bg-[#171717] hover:bg-black text-[#B8954A] text-xs font-bold py-2.5 rounded-lg uppercase tracking-wider transition-colors border border-[#B8954A]/30">
+              Add to Cart
+            </button>
+            <a href="https://wa.me/923364353333?text=I%20want%20to%20order%20IRADD%208083%20Stainless%20Steel%20Watch" target="_blank" rel="noopener" class="w-full border border-[#2E8B57] text-[#2E8B57] hover:bg-green-50 text-xs font-bold py-2 rounded-lg uppercase tracking-wider transition-colors flex items-center justify-center gap-1">
+              <span>Order on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="bg-white rounded-xl border border-[#DED8CE] p-4 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+          <div>
+            <div class="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+              <span class="absolute top-2.5 left-2.5 bg-[#B64235] text-white text-[10px] font-extrabold px-2 py-0.5 rounded">40% OFF</span>
+              <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/TaqDE.jpg?v=1778425318" alt="Afnan Watch Arabic Aura AA11 Leather Strap Watch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <span class="text-[10px] font-bold text-[#888888] uppercase tracking-widest block mb-1">Arabic Dial</span>
+            <h3 class="text-xs font-medium text-[#171717] line-clamp-2 hover:text-[#B8954A] transition-colors leading-snug">
+              <a href="product.html">Arabic Aura AA11 Leather Strap Watch</a>
+            </h3>
+            <div class="mt-2.5 flex items-baseline gap-2">
+              <span class="text-base font-black text-[#B8954A]">Rs. 1,200</span>
+              <span class="text-xs text-[#888888] line-through">Rs. 2,000</span>
+            </div>
+            <div class="text-xs text-[#888888] my-2 font-medium">
+              No reviews yet
+            </div>
+            <div class="text-[11px] text-[#2E8B57] font-semibold flex items-center justify-between border-t border-[#EEE8DD] pt-2 mt-2">
+              <span>✓ In Stock</span>
+              <span class="text-[#888888] font-normal">3–4 Days Delivery</span>
+            </div>
+          </div>
+          <div class="pt-3 space-y-2">
+            <button onclick="addToCart({id: 'AA11', name: 'Arabic Aura AA11 Leather Strap Watch', price: 1200, image: 'https://cdn.shopify.com/s/files/1/0669/0501/4343/files/TaqDE.jpg?v=1778425318'})" class="w-full bg-[#171717] hover:bg-black text-[#B8954A] text-xs font-bold py-2.5 rounded-lg uppercase tracking-wider transition-colors border border-[#B8954A]/30">
+              Add to Cart
+            </button>
+            <a href="https://wa.me/923364353333?text=I%20want%20to%20order%20Arabic%20Aura%20AA11%20Leather%20Strap%20Watch" target="_blank" rel="noopener" class="w-full border border-[#2E8B57] text-[#2E8B57] hover:bg-green-50 text-xs font-bold py-2 rounded-lg uppercase tracking-wider transition-colors flex items-center justify-center gap-1">
+              <span>Order on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="bg-white rounded-xl border border-[#DED8CE] p-4 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+          <div>
+            <div class="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+              <span class="absolute top-2.5 left-2.5 bg-[#B64235] text-white text-[10px] font-extrabold px-2 py-0.5 rounded">41% OFF</span>
+              <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/C6pXv.jpg?v=1778374128" alt="Afnan Watch HB Black Case Blue Dial Watch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <span class="text-[10px] font-bold text-[#888888] uppercase tracking-widest block mb-1">HB Series</span>
+            <h3 class="text-xs font-medium text-[#171717] line-clamp-2 hover:text-[#B8954A] transition-colors leading-snug">
+              <a href="product.html">HB Black Case , Blue Dail</a>
+            </h3>
+            <div class="mt-2.5 flex items-baseline gap-2">
+              <span class="text-base font-black text-[#B8954A]">Rs. 3,850</span>
+              <span class="text-xs text-[#888888] line-through">Rs. 6,500</span>
+            </div>
+            <div class="flex items-center gap-1 my-2 text-xs text-[#B8954A]">
+              <span>★ 4.9</span>
+              <span class="text-[#888888] text-[11px]">(24 reviews)</span>
+            </div>
+            <div class="text-[11px] text-[#2E8B57] font-semibold flex items-center justify-between border-t border-[#EEE8DD] pt-2 mt-2">
+              <span>✓ In Stock</span>
+              <span class="text-[#888888] font-normal">3–4 Days Delivery</span>
+            </div>
+          </div>
+          <div class="pt-3 space-y-2">
+            <button onclick="addToCart({id: 'HB-BLUE', name: 'HB Black Case , Blue Dail', price: 3850, image: 'https://cdn.shopify.com/s/files/1/0669/0501/4343/files/C6pXv.jpg?v=1778374128'})" class="w-full bg-[#171717] hover:bg-black text-[#B8954A] text-xs font-bold py-2.5 rounded-lg uppercase tracking-wider transition-colors border border-[#B8954A]/30">
+              Add to Cart
+            </button>
+            <a href="https://wa.me/923364353333?text=I%20want%20to%20order%20HB%20Black%20Case%20,%20Blue%20Dail" target="_blank" rel="noopener" class="w-full border border-[#2E8B57] text-[#2E8B57] hover:bg-green-50 text-xs font-bold py-2 rounded-lg uppercase tracking-wider transition-colors flex items-center justify-center gap-1">
+              <span>Order on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="bg-white rounded-xl border border-[#DED8CE] p-4 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+          <div>
+            <div class="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+              <span class="absolute top-2.5 left-2.5 bg-[#B64235] text-white text-[10px] font-extrabold px-2 py-0.5 rounded">41% OFF</span>
+              <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/TmmWN.jpg?v=1778373918" alt="Afnan Watch HB Silver Case Brown Dial Leather Watch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <span class="text-[10px] font-bold text-[#888888] uppercase tracking-widest block mb-1">HB Collection</span>
+            <h3 class="text-xs font-medium text-[#171717] line-clamp-2 hover:text-[#B8954A] transition-colors leading-snug">
+              <a href="product.html">HB Silver Case , Brown Dail</a>
+            </h3>
+            <div class="mt-2.5 flex items-baseline gap-2">
+              <span class="text-base font-black text-[#B8954A]">Rs. 3,850</span>
+              <span class="text-xs text-[#888888] line-through">Rs. 6,500</span>
+            </div>
+            <div class="flex items-center gap-1 my-2 text-xs text-[#B8954A]">
+              <span>★ 4.8</span>
+              <span class="text-[#888888] text-[11px]">(15 reviews)</span>
+            </div>
+            <div class="text-[11px] text-[#2E8B57] font-semibold flex items-center justify-between border-t border-[#EEE8DD] pt-2 mt-2">
+              <span>✓ In Stock</span>
+              <span class="text-[#888888] font-normal">3–4 Days Delivery</span>
+            </div>
+          </div>
+          <div class="pt-3 space-y-2">
+            <button onclick="addToCart({id: 'HB-BROWN', name: 'HB Silver Case , Brown Dail', price: 3850, image: 'https://cdn.shopify.com/s/files/1/0669/0501/4343/files/TmmWN.jpg?v=1778373918'})" class="w-full bg-[#171717] hover:bg-black text-[#B8954A] text-xs font-bold py-2.5 rounded-lg uppercase tracking-wider transition-colors border border-[#B8954A]/30">
+              Add to Cart
+            </button>
+            <a href="https://wa.me/923364353333?text=I%20want%20to%20order%20HB%20Silver%20Case%20,%20Brown%20Dail" target="_blank" rel="noopener" class="w-full border border-[#2E8B57] text-[#2E8B57] hover:bg-green-50 text-xs font-bold py-2 rounded-lg uppercase tracking-wider transition-colors flex items-center justify-center gap-1">
+              <span>Order on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="bg-white rounded-xl border border-[#DED8CE] p-4 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+          <div>
+            <div class="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+              <span class="absolute top-2.5 left-2.5 bg-[#B64235] text-white text-[10px] font-extrabold px-2 py-0.5 rounded">17% OFF</span>
+              <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/Shop-Al-Fajr-Qibla-Black-Watch-in-Pakistan.jpg?v=1774520248" alt="Afnan Watch Al Fajr Qibla WR-023 Prayer Watch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <span class="text-[10px] font-bold text-[#888888] uppercase tracking-widest block mb-1">Al Fajr Qibla</span>
+            <h3 class="text-xs font-medium text-[#171717] line-clamp-2 hover:text-[#B8954A] transition-colors leading-snug">
+              <a href="product.html">Al Fajr Qibla WR-023 Islamic Prayer Watch</a>
+            </h3>
+            <div class="mt-2.5 flex items-baseline gap-2">
+              <span class="text-base font-black text-[#B8954A]">Rs. 15,000</span>
+              <span class="text-xs text-[#888888] line-through">Rs. 18,000</span>
+            </div>
+            <div class="flex items-center gap-1 my-2 text-xs text-[#B8954A]">
+              <span>★ 5.0</span>
+              <span class="text-[#888888] text-[11px]">(8 reviews)</span>
+            </div>
+            <div class="text-[11px] text-[#2E8B57] font-semibold flex items-center justify-between border-t border-[#EEE8DD] pt-2 mt-2">
+              <span>✓ In Stock</span>
+              <span class="text-[#888888] font-normal">3–4 Days Delivery</span>
+            </div>
+          </div>
+          <div class="pt-3 space-y-2">
+            <button onclick="addToCart({id: 'ALFAJR-023', name: 'Al Fajr Qibla WR-023 Islamic Prayer Watch', price: 15000, image: 'https://cdn.shopify.com/s/files/1/0669/0501/4343/files/Shop-Al-Fajr-Qibla-Black-Watch-in-Pakistan.jpg?v=1774520248'})" class="w-full bg-[#171717] hover:bg-black text-[#B8954A] text-xs font-bold py-2.5 rounded-lg uppercase tracking-wider transition-colors border border-[#B8954A]/30">
+              Add to Cart
+            </button>
+            <a href="https://wa.me/923364353333?text=I%20want%20to%20order%20Al%20Fajr%20Qibla%20WR-023%20Islamic%20Prayer%20Watch" target="_blank" rel="noopener" class="w-full border border-[#2E8B57] text-[#2E8B57] hover:bg-green-50 text-xs font-bold py-2 rounded-lg uppercase tracking-wider transition-colors flex items-center justify-center gap-1">
+              <span>Order on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="bg-white rounded-xl border border-[#DED8CE] p-4 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+          <div>
+            <div class="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-3">
+              <span class="absolute top-2.5 left-2.5 bg-[#B64235] text-white text-[10px] font-extrabold px-2 py-0.5 rounded">30% OFF</span>
+              <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/a2fb83dc-C-1135-1.jpg?v=1774171540" alt="Afnan Watch Luxury Style Men’s Watch TT Day & Date" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <span class="text-[10px] font-bold text-[#888888] uppercase tracking-widest block mb-1">RLX Collection</span>
+            <h3 class="text-xs font-medium text-[#171717] line-clamp-2 hover:text-[#B8954A] transition-colors leading-snug">
+              <a href="product.html">Luxury Style Men’s Watch TT Day & Date</a>
+            </h3>
+            <div class="mt-2.5 flex items-baseline gap-2">
+              <span class="text-base font-black text-[#B8954A]">Rs. 3,650</span>
+              <span class="text-xs text-[#888888] line-through">Rs. 5,200</span>
+            </div>
+            <div class="flex items-center gap-1 my-2 text-xs text-[#B8954A]">
+              <span>★ 4.8</span>
+              <span class="text-[#888888] text-[11px]">(14 reviews)</span>
+            </div>
+            <div class="text-[11px] text-[#2E8B57] font-semibold flex items-center justify-between border-t border-[#EEE8DD] pt-2 mt-2">
+              <span>✓ In Stock</span>
+              <span class="text-[#888888] font-normal">3–4 Days Delivery</span>
+            </div>
+          </div>
+          <div class="pt-3 space-y-2">
+            <button onclick="addToCart({id: 'RLX-TTS', name: 'Luxury Style Men’s Watch TT Day & Date', price: 3650, image: 'https://cdn.shopify.com/s/files/1/0669/0501/4343/files/a2fb83dc-C-1135-1.jpg?v=1774171540'})" class="w-full bg-[#171717] hover:bg-black text-[#B8954A] text-xs font-bold py-2.5 rounded-lg uppercase tracking-wider transition-colors border border-[#B8954A]/30">
+              Add to Cart
+            </button>
+            <a href="https://wa.me/923364353333?text=I%20want%20to%20order%20Luxury%20Style%20Men’s%20Watch%20TT%20Day%20%26%20Date" target="_blank" rel="noopener" class="w-full border border-[#2E8B57] text-[#2E8B57] hover:bg-green-50 text-xs font-bold py-2 rounded-lg uppercase tracking-wider transition-colors flex items-center justify-center gap-1">
+              <span>Order on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRUST SECTION -->
+    <section class="bg-white border-y border-[#DED8CE] py-12 px-4 my-8 fade-up">
+      <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-[#171717]">
+        
+        <div class="space-y-1">
+          <div class="w-8 h-8 rounded-full bg-[#F4EFE6] text-[#B8954A] flex items-center justify-center mb-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h4 class="font-bold text-xs">Cash on Delivery</h4>
+          <p class="text-[11px] text-[#888888]">Pay upon parcel arrival</p>
+        </div>
+
+        <div class="space-y-1">
+          <div class="w-8 h-8 rounded-full bg-[#F4EFE6] text-[#B8954A] flex items-center justify-center mb-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h4 class="font-bold text-xs">Nationwide Delivery</h4>
+          <p class="text-[11px] text-[#888888]">3–4 working days</p>
+        </div>
+
+        <div class="space-y-1">
+          <div class="w-8 h-8 rounded-full bg-[#F4EFE6] text-[#B8954A] flex items-center justify-center mb-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <h4 class="font-bold text-xs">7-Day Return Policy</h4>
+          <p class="text-[11px] text-[#888888]">For defective/wrong items</p>
+        </div>
+
+        <div class="space-y-1">
+          <div class="w-8 h-8 rounded-full bg-emerald-50 text-[#2E8B57] flex items-center justify-center mb-2">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          </div>
+          <h4 class="font-bold text-xs">WhatsApp Support</h4>
+          <p class="text-[11px] text-[#888888]">+92 336 435 3333</p>
+        </div>
+
+        <div class="space-y-1">
+          <div class="w-8 h-8 rounded-full bg-[#F4EFE6] text-[#B8954A] flex items-center justify-center mb-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h4 class="font-bold text-xs">Secure Checkout</h4>
+          <p class="text-[11px] text-[#888888]">Verified order details</p>
+        </div>
+
+        <div class="space-y-1">
+          <div class="w-8 h-8 rounded-full bg-[#F4EFE6] text-[#B8954A] flex items-center justify-center mb-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          </div>
+          <h4 class="font-bold text-xs">Clear Info</h4>
+          <p class="text-[11px] text-[#888888]">Accurate specifications</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDITORIAL WATCH CARE & STYLE BANNER -->
+    <section class="max-w-[1400px] mx-auto px-4 py-12 fade-up">
+      <div class="bg-[#171717] rounded-2xl p-8 sm:p-12 text-white grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border border-[#B8954A]/30">
+        <div class="lg:col-span-7 space-y-4">
+          <span class="text-xs font-bold text-[#B8954A] uppercase tracking-widest">Editorial Guide</span>
+          <h3 class="text-2xl sm:text-4xl font-black leading-tight">Choose the Right Watch for Your Style</h3>
+          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl">
+            Whether you are selecting an executive timepiece for formal business meetings, a durable chronograph for daily wear, or an automatic self-winding movement as a gift.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <a href="categories.html?style=formal" class="p-3 bg-[#0D0D0D] border border-[#B8954A]/40 rounded-lg text-center hover:border-[#B8954A] transition-colors">
+              <span class="block text-xs font-bold text-white">Formal Watches</span>
+            </a>
+            <a href="categories.html?style=casual" class="p-3 bg-[#0D0D0D] border border-[#B8954A]/40 rounded-lg text-center hover:border-[#B8954A] transition-colors">
+              <span class="block text-xs font-bold text-white">Everyday Watches</span>
+            </a>
+            <a href="categories.html?category=automatic" class="p-3 bg-[#0D0D0D] border border-[#B8954A]/40 rounded-lg text-center hover:border-[#B8954A] transition-colors">
+              <span class="block text-xs font-bold text-white">Automatic</span>
+            </a>
+            <a href="categories.html?category=couple" class="p-3 bg-[#0D0D0D] border border-[#B8954A]/40 rounded-lg text-center hover:border-[#B8954A] transition-colors">
+              <span class="block text-xs font-bold text-white">Gift Sets</span>
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-5 aspect-[4/3] rounded-xl overflow-hidden border border-gray-800">
+          <img src="https://cdn.shopify.com/s/files/1/0669/0501/4343/files/A9B610FE-AEE4-4854-ABD8-E09B5CF51D8D.jpg" alt="Afnan Watch Editorial Timepiece Lifestyle Guide" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0D0D0D] text-gray-400 text-xs border-t border border-[#2A2A2A] pt-16 pb-10">
+    <div class="max-w-[1400px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      
+      <!-- Col 1 -->
+      <div class="lg:col-span-2 space-y-4">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-[#171717] rounded flex items-center justify-center text-[#B8954A] font-bold text-lg border border-[#B8954A]/40">AW</div>
+          <span class="text-xl font-black text-white tracking-widest uppercase">AFNAN <span class="text-[#B8954A]">WATCH</span></span>
+        </a>
+        <p class="text-gray-400 leading-relaxed text-xs max-w-sm">
+          Afnan Watch is an active online retailer in Pakistan offering an extensive collection of men's, women's, automatic, luxury-inspired, and couple timepieces.
+        </p>
+        <div class="space-y-1 text-xs text-gray-300">
+          <p><strong class="text-white">Official Website:</strong> <a href="https://afnanwatch.com/" target="_blank" rel="noopener" class="text-[#B8954A] hover:underline">afnanwatch.com</a></p>
+          <p><strong class="text-white">WhatsApp Support:</strong> <a href="https://wa.me/923364353333" target="_blank" rel="noopener" class="text-green-400 hover:underline">+92 336 435 3333</a></p>
+          <p><strong class="text-white">Customer Support Email:</strong> info@afnanwatch.com</p>
+        </div>
+      </div>
+
+      <!-- Col 2 -->
+      <div class="space-y-3">
+        <h4 class="text-white font-bold uppercase tracking-widest text-xs">Categories</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="categories.html?category=men" class="hover:text-[#B8954A] transition-colors">Men’s Watches</a></li>
+          <li><a href="categories.html?category=women" class="hover:text-[#B8954A] transition-colors">Women’s Watches</a></li>
+          <li><a href="categories.html?category=automatic" class="hover:text-[#B8954A] transition-colors">Automatic Watches</a></li>
+          <li><a href="categories.html?category=luxury" class="hover:text-[#B8954A] transition-colors">Luxury Style</a></li>
+          <li><a href="categories.html?sale=true" class="hover:text-[#B64235] text-[#B64235] font-semibold transition-colors">Sale Offers</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3 -->
+      <div class="space-y-3">
+        <h4 class="text-white font-bold uppercase tracking-widest text-xs">Customer Policies</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="contact.html#shipping" class="hover:text-[#B8954A] transition-colors">Shipping Policy (3-4 Days)</a></li>
+          <li><a href="contact.html#returns" class="hover:text-[#B8954A] transition-colors">7-Day Return Policy</a></li>
+          <li><a href="contact.html#privacy" class="hover:text-[#B8954A] transition-colors">Privacy Policy</a></li>
+          <li><a href="contact.html#terms" class="hover:text-[#B8954A] transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4 -->
+      <div class="space-y-3">
+        <h4 class="text-white font-bold uppercase tracking-widest text-xs">Social Channels</h4>
+        <div class="flex items-center gap-3">
+          <a href="https://www.facebook.com/afnan.watch.center/" target="_blank" rel="noopener" class="bg-gray-900 hover:bg-[#B8954A] p-2 rounded text-white transition-colors" title="Facebook">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@afnan.watch" target="_blank" rel="noopener" class="bg-gray-900 hover:bg-[#B8954A] p-2 rounded text-white transition-colors" title="TikTok">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.67 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.57-1.31 1.55-1.3 2.55.01 1.05.59 2.05 1.51 2.53.94.49 2.12.44 3.01-.1.85-.52 1.37-1.48 1.37-2.48.01-5.6.01-11.2 0-16.8z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="max-w-[1400px] mx-auto px-4 border-t border-gray-900 pt-6 text-center text-[11px] text-gray-500">
+      <p>© 2026 Afnan Watch Redesign Proposal. All business information verified from <a href="https://afnanwatch.com/" target="_blank" class="text-gray-400 hover:underline">afnanwatch.com</a>. Not affiliated with Afnan Watch unless authorized.</p>
+    </div>
+  </footer>
+
+  <!-- SHARED JAVASCRIPT -->
+  <script>
+    function getCart() {
+      try { return JSON.parse(localStorage.getItem('afnan_cart')) || []; } catch (e) { return []; }
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem('afnan_cart', JSON.stringify(cart));
+      updateGlobalCartCount();
+    }
+
+    function updateGlobalCartCount() {
+      const cart = getCart();
+      const count = cart.reduce((total, item) => total + item.quantity, 0);
+      const countEl = document.getElementById('global-cart-count');
+      if (countEl) countEl.textContent = count;
+    }
+
+    function addToCart(product, quantity = 1) {
+      const cart = getCart();
+      const existing = cart.find(item => item.id === product.id);
+      if (existing) {
+        existing.quantity += quantity;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.image,
+          quantity: quantity
+        });
+      }
+      saveCart(cart);
+
+      if (event && event.currentTarget) {
+        const btn = event.currentTarget;
+        const orig = btn.innerHTML;
+        btn.innerHTML = '✓ Added';
+        btn.classList.add('bg-[#2E8B57]', 'text-white');
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.classList.remove('bg-[#2E8B57]', 'text-white');
+        }, 2000);
+      }
+    }
+
+    // Scroll shadow header
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('main-header');
+      if (header) {
+        if (window.scrollY > 20) {
+          header.classList.add('shadow-md');
+        } else {
+          header.classList.remove('shadow-md');
+        }
+      }
+    });
+
+    // Mobile Menu
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('close-drawer-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    const drawerContent = document.getElementById('mobile-drawer-content');
+
+    if (mobileBtn && drawer && drawerContent) {
+      mobileBtn.addEventListener('click', () => {
+        drawer.classList.remove('hidden');
+        setTimeout(() => {
+          drawer.classList.remove('opacity-0');
+          drawerContent.classList.remove('-translate-x-full');
+        }, 10);
+      });
+    }
+
+    if (closeBtn && drawer && drawerContent) {
+      closeBtn.addEventListener('click', () => {
+        drawerContent.classList.add('-translate-x-full');
+        drawer.classList.add('opacity-0');
+        setTimeout(() => drawer.classList.add('hidden'), 300);
+      });
+    }
+
+    // Fade up animations
+    document.addEventListener('DOMContentLoaded', () => {
+      updateGlobalCartCount();
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    });
+  </script>
+
+  <!-- CHATBOT -->
+</body>
+</html>
