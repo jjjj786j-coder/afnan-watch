@@ -139,6 +139,26 @@ footer{background:linear-gradient(135deg,#101828,#242052)!important}
 }
 @media(prefers-reduced-motion:reduce){main .grid>.group:hover{transform:none}}
 </style>
+<script src="https://cdn.zanderio.ai/widget/loader.js" data-id="wdg_v2m4Dy5QdcNkzqQgWMjReK3V" defer></script>
+<script>
+(() => {
+  const installChatbotIcon = () => {
+    const shadowRoot = document.getElementById('zanderio-widget-host')?.shadowRoot;
+    if (!shadowRoot || shadowRoot.querySelector('style[data-afnan-chatbot-icon]')) return Boolean(shadowRoot);
+    const icon = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 18.5 3.5 21l1.1-4.3A8.4 8.4 0 0 1 3 11.5C3 6.8 7 3 12 3s9 3.8 9 8.5-4 8.5-9 8.5c-1.8 0-3.5-.5-5-1.5Z" fill="none" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h8" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>');
+    const style = document.createElement('style');
+    style.dataset.afnanChatbotIcon = '';
+    style.textContent = `button[aria-label="Open chat"] img{display:none!important}button[aria-label="Open chat"]::before{content:"";display:block;width:22px;height:22px;background:url("${icon}") center/contain no-repeat}`;
+    shadowRoot.appendChild(style);
+    return true;
+  };
+  const observer = new MutationObserver(() => {
+    if (installChatbotIcon()) observer.disconnect();
+  });
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  if (installChatbotIcon()) observer.disconnect();
+})();
+</script>
 </head>
 <body class="bg-[#F7F4EF] text-[#171717] antialiased">
 <!-- TOP BAR -->
